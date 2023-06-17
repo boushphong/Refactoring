@@ -1,4 +1,4 @@
-# Complex Condition
+# Complex Conditional
 
 ## BAD CODE
 **Why:**
