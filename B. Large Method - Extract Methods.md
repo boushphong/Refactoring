@@ -31,7 +31,7 @@ class Vehicle {
 **Why:**
 - Easier to read and unit tests (NOTE: Extracting print methods might not be a realistic refactoring example)
 ```java
-public class Vehicle {
+class Vehicle {
     private String make;
     private String model;
     private int year;
