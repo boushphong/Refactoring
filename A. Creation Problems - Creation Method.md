@@ -130,3 +130,5 @@ public class Main {
     }
 }
 ```
+
+**NOTE:** You could also use the Factory Method design pattern as an alternative option to avoid overloading too many constructors into a class.
