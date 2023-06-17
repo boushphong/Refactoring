@@ -32,9 +32,8 @@ class Vehicle {
 ## GOOD CODE
 **Why:**
 -  We introduce the `Vehicle` abstract class, Each specific Vehicle type (`VintageVehicle`, `ClassicVehicle`, `ModernVehicle`) extends the class and provides its own implementation for the `getTypeLabel()` method.
--  The refactored code adheres to the Strategy Design Pattern, which replaces the large conditional with polymorphism. It allows for easy addition or modification of vehicle types without modifying the Vehicle class itself. This improves code maintainability, promotes separation of concerns, and follows the Open-Closed Principle by being open for extension and closed for modification.
+-  The refactored code adheres to the Strategy Design Pattern, which replaces the large conditional with polymorphism. It allows for easy addition or modification of vehicle types without modifying the `Vehicle` class itself. This improves code maintainability, promotes separation of concerns, and follows the Open-Closed Principle by being open for extension and closed for modification.
 ```java
-
 abstract class Vehicle {
     private String make;
     private String model;
