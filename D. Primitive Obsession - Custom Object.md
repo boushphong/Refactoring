@@ -2,10 +2,10 @@
 
 ## BAD CODE
 **Why:**
-In the above code, the engine-related information (engineType and engineHorsepower) is represented using primitive types (String and int). This is an example of "primitive obsession," where the code relies on primitive types to represent a concept that could benefit from a dedicated custom object.
+- In the below code, the engine-related information (`engineType` and `engineHorsepower`) is represented using primitive types (`String` and `int`). This is an example of "primitive obsession," where the code relies on primitive types to represent a concept that could benefit from a dedicated custom object.
 
 ```java
-public class Vehicle {
+class Vehicle {
     private String make;
     private String model;
     private int year;
@@ -31,7 +31,7 @@ public class Vehicle {
 
 ## GOOD CODE
 **Why:**
-- Easier to read and unit tests (NOTE: Extracting print methods might not be a realistic refactoring example)
+- The engine information is encapsulated within the `Engine` object, which provides a more structured and maintainable approach.
 ```java
 class Vehicle {
     private String make;
@@ -39,37 +39,29 @@ class Vehicle {
     private int year;
     private String color;
     private int mileage;
+    private Engine engine;
     
     // Constructors, getters, and setters
     
     public void printInfo() {
-        printMake();
-        printModel();
-        printYear();
-        printColor();
-        printMileage();
-        
-        // Additional logic and operations specific to printing vehicle information
-    }
-    
-    private void printMake() {
         System.out.println("Make: " + make);
-    }
-    
-    private void printModel() {
         System.out.println("Model: " + model);
-    }
-    
-    private void printYear() {
         System.out.println("Year: " + year);
-    }
-    
-    private void printColor() {
         System.out.println("Color: " + color);
+        System.out.println("Mileage: " + mileage);
+        System.out.println("Engine: " + engine.getDescription());
     }
     
-    private void printMileage() {
-        System.out.println("Mileage: " + mileage);
+    // Custom object representing the engine
+    public static class Engine {
+        private String type;
+        private int horsepower;
+        
+        // Constructors, getters, and setters
+        
+        public String getDescription() {
+            return type + " (" + horsepower + " HP)";
+        }
     }
 }
 ```
